@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+boto3
+python-dotenv
+pytest
+strands-decider

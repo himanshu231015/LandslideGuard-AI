@@ -1,0 +1,63 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #17212b;
+  background: #f3f6f8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.container { max-width: 900px; margin: 0 auto; padding: 32px 18px; }
+header { margin-bottom: 24px; }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #16745b; }
+h1 { font-size: clamp(32px, 6vw, 48px); margin: 8px 0; }
+.subtitle { color: #586777; }
+.panel { background: white; border: 1px solid #dce4e9; border-radius: 16px; padding: 24px; margin: 18px 0; }
+label, .label { display: block; color: #586777; font-size: 13px; margin-bottom: 8px; }
+textarea { width: 100%; min-height: 150px; padding: 14px; border: 1px solid #bdcbd5; border-radius: 10px; font: inherit; resize: vertical; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+button { border: 0; border-radius: 9px; padding: 12px 18px; background: #146c54; color: white; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+button.secondary { background: #e7edf1; color: #17212b; }
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+.result-grid strong { display: block; font-size: 18px; overflow-wrap: anywhere; }
+.notice { background: #fff6df; padding: 12px; border-radius: 8px; line-height: 1.5; }
+.hidden { display: none; }
+footer { font-size: 13px; color: #586777; line-height: 1.5; padding: 8px 2px; }
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+}
+
+.weather-card {
+    padding: 16px;
+    border: 1px solid #dce5e9;
+    border-radius: 12px;
+    background: #f8fbfc;
+}
+
+.weather-card h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #526471;
+}
+
+.weather-value {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #126b55;
+}
+
+.weather-source {
+    font-size: 12px;
+    color: #526471;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .weather-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

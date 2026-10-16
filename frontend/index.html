@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LandslideGuard AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+</body>
+</html>
+
+<section class="panel" id="realtime-panel">
+  <h2>Real-time Location Intelligence</h2>
+  <p>Weather, official alerts, road status and map for your selected location.</p>
+
+  <label for="realtime-place">Location</label>
+  <input
+    id="realtime-place"
+    type="text"
+    value="Kedarnath, Uttarakhand, India"
+    maxlength="150"
+  />
+
+  <button id="refresh-realtime" type="button">Refresh Live Data</button>
+  <p id="realtime-status" role="status" aria-live="polite">
+    Live data has not been loaded.
+  </p>
+
+  <h3>Weather</h3>
+  <pre id="realtime-weather">Not loaded</pre>
+
+  <h3>Official Alerts</h3>
+  <div id="realtime-alerts">Not loaded</div>
+
+  <h3>Road Status</h3>
+  <div id="realtime-roads">Not loaded</div>
+
+  <h3>Map</h3>
+  <div id="realtime-map">Not loaded</div>
+
+  <p class="notice">
+    Missing data does not mean the area is safe or a road is open.
+    Verify critical information with official authorities.
+  </p>
+</section>
+</body>
+</html>
+
+
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">HAZARD RESPONSE DECISION SUPPORT</p>
+      <h1>LandslideGuard AI</h1>
+      <p class="subtitle">
+        Strands Decider 2B + Amazon Bedrock
+      </p>
+    </header>
+
+    <section class="panel">
+      <h2>Analyze an incident</h2>
+      <p>
+        Describe the observed hazard. Do not enter sensitive personal
+        information. This demo does not access live emergency data.
+      </p>
+
+      <form id="incident-form">
+        <label for="report">Incident report</label>
+        <textarea id="report" minlength="10" maxlength="5000"
+          required>Heavy rain has blocked a mountain road. Rocks are falling and three vehicles are stranded.</textarea>
+        <div class="actions">
+          <button id="analyze" type="submit">Analyze incident</button>
+          <button id="sample" class="secondary" type="button">
+            Load ambiguous sample
+          </button>
+        </div>
+      </form>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="results" class="panel hidden" aria-live="polite">
+      <h2>Decision result</h2>
+      <div class="result-grid">
+        <div>
+          <span class="label">Response category</span>
+          <strong id="category">—</strong>
+        </div>
+        <div>
+          <span class="label">Confidence</span>
+          <strong id="confidence">—</strong>
+        </div>
+        <div>
+          <span class="label">Decision latency</span>
+          <strong id="latency">—</strong>
+        </div>
+        <div>
+          <span class="label">Human review</span>
+          <strong id="review">—</strong>
+        </div>
+      </div>
+
+      <p id="safety" class="notice"></p>
+
+      <h3>Bedrock explanation</h3>
+      <p id="explanation"></p>
+      <p id="bedrock-status" class="label"></p>
+      <p id="notice" class="notice"></p>
+    </section>
+
+    <footer>
+      Prototype only. In a real emergency, contact local emergency
+      services or authorized responders.
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+<script src="/static/realtime.js" defer></script>
+</body>
+</html>
